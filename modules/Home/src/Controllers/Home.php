@@ -10,4 +10,11 @@ class Home extends BaseController
     {
         return view('Home\Views\welcome_message');
     }
+
+    public function helper()
+    {
+        helper('Home\Helpers\test');
+
+        return test();
+    }
 }

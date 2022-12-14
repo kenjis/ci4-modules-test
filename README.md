@@ -10,6 +10,8 @@ modules/
      │   └── Routes.php
      ├── Controllers/
      │   └── Home.php
+     └── Helpers/
+         └── test_helper.php
      └── Views/
          └── welcome_message.php
 ```
