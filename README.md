@@ -13,6 +13,7 @@ modules/
      └── Helpers/
          └── test_helper.php
      └── Views/
+         └── blog_template.php
          └── welcome_message.php
 ```
 
