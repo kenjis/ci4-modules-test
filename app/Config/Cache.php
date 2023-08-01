@@ -20,10 +20,8 @@ class Cache extends BaseConfig
      *
      * The name of the preferred handler that should be used. If for some reason
      * it is not available, the $backupHandler will be used in its place.
-     *
-     * @var string
      */
-    public $handler = 'file';
+    public string $handler = 'file';
 
     /**
      * --------------------------------------------------------------------------
@@ -33,10 +31,8 @@ class Cache extends BaseConfig
      * The name of the handler that will be used in case the first one is
      * unreachable. Often, 'file' is used here since the filesystem is
      * always available, though that's not always practical for the app.
-     *
-     * @var string
      */
-    public $backupHandler = 'dummy';
+    public string $backupHandler = 'dummy';
 
     /**
      * --------------------------------------------------------------------------
@@ -46,11 +42,9 @@ class Cache extends BaseConfig
      * The path to where cache files should be stored, if using a file-based
      * system.
      *
-     * @var string
-     *
      * @deprecated Use the driver-specific variant under $file
      */
-    public $storePath = WRITEPATH . 'cache/';
+    public string $storePath = WRITEPATH . 'cache/';
 
     /**
      * --------------------------------------------------------------------------
@@ -78,10 +72,8 @@ class Cache extends BaseConfig
      *
      * This string is added to all cache item names to help avoid collisions
      * if you run multiple applications with the same cache engine.
-     *
-     * @var string
      */
-    public $prefix = '';
+    public string $prefix = '';
 
     /**
      * --------------------------------------------------------------------------
@@ -93,10 +85,8 @@ class Cache extends BaseConfig
      * WARNING: This is not used by framework handlers where 60 seconds is
      * hard-coded, but may be useful to projects and modules. This will replace
      * the hard-coded value in a future release.
-     *
-     * @var int
      */
-    public $ttl = 60;
+    public int $ttl = 60;
 
     /**
      * --------------------------------------------------------------------------
@@ -109,7 +99,7 @@ class Cache extends BaseConfig
      *
      * NOTE: The default set is required for PSR-6 compliance.
      */
-    public $reservedCharacters = '{}()/\@:';
+    public string $reservedCharacters = '{}()/\@:';
 
     /**
      * --------------------------------------------------------------------------
@@ -120,7 +110,7 @@ class Cache extends BaseConfig
      *
      * @var array<string, int|string|null>
      */
-    public $file = [
+    public array $file = [
         'storePath' => WRITEPATH . 'cache/',
         'mode'      => 0640,
     ];
@@ -134,9 +124,9 @@ class Cache extends BaseConfig
      *
      * @see https://codeigniter.com/user_guide/libraries/caching.html#memcached
      *
-     * @var array<string, boolean|int|string>
+     * @var array<string, bool|int|string>
      */
-    public $memcached = [
+    public array $memcached = [
         'host'   => '127.0.0.1',
         'port'   => 11211,
         'weight' => 1,
@@ -152,7 +142,7 @@ class Cache extends BaseConfig
      *
      * @var array<string, int|string|null>
      */
-    public $redis = [
+    public array $redis = [
         'host'     => '127.0.0.1',
         'password' => null,
         'port'     => 6379,
@@ -171,7 +161,7 @@ class Cache extends BaseConfig
      * @var array<string, string>
      * @phpstan-var array<string, class-string<CacheInterface>>
      */
-    public $validHandlers = [
+    public array $validHandlers = [
         'dummy'     => DummyHandler::class,
         'file'      => FileHandler::class,
         'memcached' => MemcachedHandler::class,
