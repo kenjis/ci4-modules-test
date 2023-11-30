@@ -76,8 +76,8 @@
             <?php if (ENVIRONMENT !== 'production') : ?>
                 <?= nl2br(esc($message)) ?>
             <?php else : ?>
-                Sorry! Cannot seem to find the page you were looking for.
-            <?php endif ?>
+                <?= lang('Errors.sorryCannotFind') ?>
+            <?php endif; ?>
         </p>
     </div>
 </body>
