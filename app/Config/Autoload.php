@@ -49,6 +49,7 @@ class Autoload extends AutoloadConfig
         APP_NAMESPACE => APPPATH, // For custom app namespace
         'Config'      => APPPATH . 'Config',
         'Home'        => ROOTPATH . 'modules/Home/src',
+        'Blog'        => ROOTPATH . 'modules/Blog/src',
     ];
 
     /**
